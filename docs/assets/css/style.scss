@@ -3,117 +3,103 @@
 
 @import "{{ site.theme }}";
 
-/* Maximize page width */
-body {
-  max-width: 100%;
+/* Maximize content area and minimize sidebar */
+.wrapper {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 0;
+  max-width: none;
   width: 100%;
   margin: 0;
   padding: 0;
 }
 
-.wrapper {
-  max-width: 100%;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0;
+body {
+  background: #ffffff;
 }
 
+/* Minimize and simplify header/sidebar */
 header {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  padding: 2rem 2rem;
-  border-bottom: 3px solid #333;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  grid-column: 1;
+  background: #f5f5f5;
+  border-right: 1px solid #e0e0e0;
+  padding: 1.5rem 1rem;
+  position: sticky;
+  top: 0;
+  height: fit-content;
+  max-height: 100vh;
+  overflow-y: auto;
 }
 
 header h1 {
-  color: white;
-  font-size: 2.5em;
-  margin: 0;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  font-size: 1.3em;
+  color: #333;
+  margin: 0 0 0.5rem 0;
+  text-shadow: none;
 }
 
 header p {
-  color: #f0f0f0;
-  font-size: 1.1em;
-  margin: 0.5rem 0 0 0;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-}
-
-nav {
-  background: #333;
-  padding: 0;
+  font-size: 0.85em;
+  color: #666;
   margin: 0;
-  border-bottom: 2px solid #667eea;
+  text-shadow: none;
+  line-height: 1.4;
 }
 
-nav a {
-  display: inline-block;
-  padding: 1rem 1.5rem;
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-  transition: background 0.3s ease;
-  border-right: 1px solid #555;
-}
-
-nav a:hover {
-  background: #667eea;
-  color: white;
-}
-
-main {
-  display: flex;
-  flex-direction: row;
+header img {
   max-width: 100%;
-  width: 100%;
+  height: auto;
+  margin: 1rem 0;
+  border-radius: 4px;
 }
 
-.content-wrapper {
-  display: flex;
-  width: 100%;
-  gap: 0;
-}
-
+/* Main content area - maximize */
 section {
-  flex: 1;
-  padding: 2rem;
+  grid-column: 2;
+  padding: 3rem 4rem;
   line-height: 1.7;
+  background: #ffffff;
+  max-width: none;
 }
 
 section h1 {
   border-bottom: 3px solid #667eea;
-  padding-bottom: 0.5rem;
-  margin-bottom: 1.5rem;
-  font-size: 2.2em;
+  padding-bottom: 0.8rem;
+  margin: 0 0 2rem 0;
+  font-size: 2.5em;
+  color: #1a1a1a;
 }
 
 section h2 {
   border-bottom: 2px solid #764ba2;
-  padding-bottom: 0.3rem;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-  font-size: 1.7em;
+  padding-bottom: 0.5rem;
+  margin: 2.5rem 0 1.2rem 0;
+  font-size: 1.8em;
+  color: #1a1a1a;
 }
 
 section h3 {
   color: #667eea;
-  margin-top: 1.5rem;
-  margin-bottom: 0.8rem;
-  font-size: 1.3em;
+  margin: 1.8rem 0 1rem 0;
+  font-size: 1.4em;
+  font-weight: 600;
 }
 
 section h4, section h5, section h6 {
   color: #764ba2;
+  margin: 1.3rem 0 0.8rem 0;
 }
 
 /* Code blocks */
 pre {
   background: #f5f5f5;
   border-left: 4px solid #667eea;
-  padding: 1rem;
+  padding: 1.2rem;
   overflow-x: auto;
   border-radius: 4px;
   line-height: 1.4;
+  margin: 1.5rem 0;
+  font-size: 0.9em;
 }
 
 code {
@@ -122,20 +108,22 @@ code {
   background: #f5f5f5;
   padding: 0.2rem 0.4rem;
   border-radius: 3px;
+  color: #d63384;
 }
 
 pre code {
   background: none;
   padding: 0;
   border-radius: 0;
+  color: #333;
 }
 
-/* Tables */
+/* Tables - optimized for wide content */
 table {
   width: 100%;
   border-collapse: collapse;
-  margin: 1.5rem 0;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin: 2rem 0;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
 }
 
 th {
@@ -144,11 +132,13 @@ th {
   padding: 1rem;
   text-align: left;
   font-weight: 600;
+  font-size: 0.95em;
 }
 
 td {
-  border: 1px solid #ddd;
-  padding: 0.8rem;
+  border: 1px solid #e0e0e0;
+  padding: 0.9rem 1rem;
+  font-size: 0.95em;
 }
 
 tr:nth-child(even) {
@@ -157,13 +147,14 @@ tr:nth-child(even) {
 
 tr:hover {
   background: #f0f3ff;
+  transition: background 0.2s ease;
 }
 
 /* Links */
 a {
   color: #667eea;
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 a:hover {
@@ -173,79 +164,117 @@ a:hover {
 
 /* Lists */
 ul, ol {
-  margin: 1rem 0;
+  margin: 1.2rem 0;
   padding-left: 2rem;
 }
 
 li {
-  margin: 0.5rem 0;
+  margin: 0.6rem 0;
   line-height: 1.6;
 }
 
 /* Blockquotes */
 blockquote {
   border-left: 4px solid #764ba2;
-  padding-left: 1rem;
-  margin-left: 0;
-  color: #666;
+  padding: 0.8rem 1.2rem;
+  margin: 1.5rem 0;
+  color: #555;
   font-style: italic;
   background: #f9f9f9;
-  padding: 0.5rem 1rem;
   border-radius: 4px;
 }
 
-/* Diagrams & special content */
-.mermaid {
-  display: flex;
-  justify-content: center;
-  margin: 2rem 0;
+/* Navigation (if visible) */
+nav {
+  display: none;
+}
+
+/* Remove download buttons */
+.downloads {
+  display: none;
+}
+
+/* Footer adjustments */
+footer {
+  grid-column: 1 / -1;
   background: #f5f5f5;
-  padding: 1rem;
-  border-radius: 4px;
+  border-top: 1px solid #e0e0e0;
+  padding: 2rem;
+  text-align: center;
+  color: #666;
+  font-size: 0.9em;
 }
 
-/* Responsive improvements */
-@media (max-width: 768px) {
-  section {
-    padding: 1rem;
+/* Responsive design for smaller screens */
+@media (max-width: 1024px) {
+  .wrapper {
+    grid-template-columns: 180px 1fr;
   }
+  
+  section {
+    padding: 2rem 2.5rem;
+  }
+  
+  section h1 {
+    font-size: 2em;
+  }
+  
+  section h2 {
+    font-size: 1.5em;
+  }
+}
 
+@media (max-width: 768px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+  }
+  
+  header {
+    grid-column: 1;
+    border-right: none;
+    border-bottom: 1px solid #e0e0e0;
+    position: static;
+    max-height: none;
+    padding: 1.5rem;
+  }
+  
+  section {
+    grid-column: 1;
+    padding: 1.5rem 1.5rem;
+  }
+  
   section h1 {
     font-size: 1.8em;
   }
-
+  
   section h2 {
-    font-size: 1.4em;
+    font-size: 1.3em;
   }
-
-  nav a {
-    display: block;
-    padding: 0.8rem 1rem;
-    border-right: none;
-    border-bottom: 1px solid #555;
-  }
-
+  
   table {
-    font-size: 0.9em;
+    font-size: 0.85em;
   }
-
+  
   th, td {
-    padding: 0.6rem;
+    padding: 0.6rem 0.8rem;
   }
 }
 
 /* Print styles */
 @media print {
-  body {
+  body, section {
     background: white;
   }
-
-  section {
-    box-shadow: none;
+  
+  header {
+    display: none;
   }
-
-  a {
-    color: #667eea;
-    text-decoration: underline;
+  
+  .wrapper {
+    grid-template-columns: 1fr;
+  }
+  
+  section {
+    grid-column: 1;
   }
 }
