@@ -119,7 +119,7 @@ PE_total = x + α * PE_fourier + β * PE_learned
 
 ```
 EIR Head:         h_eir (128,) → Linear(128 → 1) → EIR output
-Prevalence Head:  h_phi (128,) → Linear(128 → 1) → φ output
+Immunity Function Head:  h_phi (128,) → Linear(128 → 1) → φ output
 Incidence Head:   [h_eir_seq (B, T, 128),
                    h_phi_seq (B, T, 128)]
                     ↓
@@ -141,8 +141,8 @@ Input: {
 }
   ↓
 ┌─────────────────────┬──────────────────────┐
-│ EIR Encoder         │ Prevalence Encoder   │
-│ (TemporalEncoder)   │ (TemporalEncoder)    │
+│ EIR Encoder         │ Immunity Function    │
+│ (TemporalEncoder)   │ Encoder (Temporal)   │
 │ 3 LSTM layers       │ 3 LSTM layers        │
 │ Attention pooling   │ Attention pooling    │
 └──────┬──────────────┴──────────┬───────────┘
@@ -156,7 +156,7 @@ Input: {
        │                         │
        │                    ├─→ Linear(128→1)
        │                    │        ↓
-       │                    │    Prevalence output
+       │                    │    Immunity output
        │                         │
        └─────────→ Incidence Head ←──┴─────
                     (MLP decoder)
@@ -173,15 +173,15 @@ Input: {
 - **Future context**: 4 timesteps
 - **Target**: EIR value at center timestep
 
-### Prevalence Prediction
+### Immunuty function Prediction
 - **Window size**: 245 timesteps
 - **Past context**: 245 timesteps (full history)
 - **Future context**: 0 timesteps
 - **Target**: Current prevalence value
 
 ### Incidence Prediction
-- **Multi-stream input**: Uses both EIR and Prevalence encoders
-- **Window alignment**: Synchronized with prevalence window
+- **Multi-stream input**: Uses both EIR and immunity function encoders
+- **Window alignment**: Synchronized with immunity function window
 - **Target**: Incidence value at each timestep
 
 
@@ -194,7 +194,7 @@ transform(x) = log(x + 1e-8)
 
 # Applied to:
 # - EIR_true
-# - phi (prevalence)
+# - phi (immunity function)
 # - prev_true 
 # - incall (incidence)
 ```

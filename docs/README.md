@@ -74,7 +74,7 @@ Document your findings in [Results](results.html):
 |--------|---------|
 | **Purpose** | Epidemiological forecasting and parameter estimation |
 | **Key Innovation** | Multi-scale temporal convolution + attention-based encoding |
-| **Tasks** | EIR prediction, Prevalence estimation, Incidence forecasting |
+| **Tasks** | EIR prediction, Immunity function estimation, Incidence forecasting |
 | **Architecture** | 3 separate temporal encoders + 3 output heads + incidence fusion layer |
 | **Total Parameters** | ~450K trainable parameters |
 | **GPU Memory** | ~800MB (training), ~200MB (inference) |
@@ -153,8 +153,8 @@ LSTM-based sequence processor with:
 ### Multi-Task Learning
 Single model predicts three related epidemiological quantities:
 - **EIR**: Transmission intensity (64-timestep windows)
-- **Prevalence**: Disease burden (245-timestep windows)
-- **Incidence**: Case counts (synchronized with prevalence)
+- **Immunity Function (φ)**: Host immunity level (245-timestep windows)
+- **Incidence**: Case counts (synchronized with immunity function)
 
 ### Masked Training
 Proper handling of padded sequences ensures only valid data contributes to loss and attention.

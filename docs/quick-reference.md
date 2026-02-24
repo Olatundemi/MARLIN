@@ -67,7 +67,7 @@ Early stop:    patience=20
 | Task | Window | Past | Future | Shape |
 |------|--------|------|--------|-------|
 | EIR | 15 | 11 | 4 | (11+4+1, 1) |
-| Prevalence | 245 | 245 | 0 | (245, 1) |
+| Immunity Function | 245 | 245 | 0 | (245, 1) |
 | Incidence | 245 | 245 | 0 | (245, 1) |
 
 ### Dataset Split
@@ -100,7 +100,7 @@ Where:
 ### Default Weights
 ```python
 w_eir = 0.5   # EIR prediction weight
-w_phi = 0.5   # Prevalence prediction weight  
+w_phi = 0.5   # Immunity function prediction weight  
 w_inc = 0.3   # Incidence prediction weight
 ```
 
@@ -111,10 +111,10 @@ w_inc = 0.3   # Incidence prediction weight
 *To be updated after initial experiments*
 
 ```
-Task          MAE      RMSE     R²
-─────────────────────────────────
-EIR:          —        —        —
-Prevalence:   —        —        —
+Task                  MAE      RMSE     R²
+──────────────────────────────────────
+EIR:                  —        —        —
+Immunity Function:    —        —        —
 Incidence:    —        —        —
 ```
 

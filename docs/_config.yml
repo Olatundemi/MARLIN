@@ -4,6 +4,14 @@ theme: jekyll-theme-minimal
 logo: https://github.com/Olatundemi/MARLIN/blob/main/assets/marlin.png?raw=true
 show_downloads: false
 
+# Layout settings
+layout_type: wide
+
+# Custom CSS
+sass:
+  sass_dir: assets/css/
+  style: compressed
+
 # Navigation
 nav:
   - name: Home

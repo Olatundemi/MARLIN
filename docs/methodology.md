@@ -25,19 +25,19 @@ Apply log transformation to positive quantities
 Three separate multi-stream sequences created per run:
 
 **EIR Stream**:
-- Extract prevalence (`prev_true`) as input features
+- Extract prevalence history (`prev_true`) as input features
 - Build sliding windows with past=11, future=4
 - Align with EIR labels for prediction
 
-**Prevalence Stream**:
+**Immunity Function Stream**:
 - Extract prevalence as input and maintain history
 - Build windows with past=245, future=0
-- Align with phi (prevalence) labels
+- Align with phi (immunity function) labels
 
 **Incidence Stream**:
-- Uses same temporal alignment as prevalence
+- Uses same temporal alignment as immunity function
 - Targets: incidence values (`incall`)
-- Powered by both EIR and prevalence encoders
+- Powered by both EIR and immunity function encoders
 
 
 ### Phase 2: Dataset and DataLoader Setup
@@ -185,7 +185,7 @@ test_metrics = compute_metrics(predictions, actuals)
 ## Hyperparameter Tuning Strategy
 
 ### Primary Tuning Objectives
-1. **Loss weighting**: Balance between EIR, prevalence, and incidence tasks
+1. **Loss weighting**: Balance between EIR, immunity function, and incidence tasks
 2. **Learning rate**: Optimal gradient descent step size
 3. **LSTM layers**: Depth of temporal context modeling
 4. **Positional encoding**: Fourier vs learned vs hybrid
@@ -231,7 +231,7 @@ All experiments in this repository use **seed=42** for data splitting and initia
 - No sequential application → faster training
 
 ### 2. Separate Temporal Encoders
-- EIR and prevalence have different temporal dynamics
+- EIR and immunity function have different temporal dynamics
 - Separate encoders allow task-specific temporal modeling
 - Incidence head fuses both encodings for joint prediction
 

@@ -65,7 +65,7 @@ Results will be populated as experiments are completed. Each entry includes:
 **Config**:
 - Positional encoding: Fourier + Learned (Hybrid)
 - Alpha: 1.0, Beta: 0.5
-- Applied to: Both EIR and prevalence encoders
+- Applied to: Both EIR and immunity function encoders
 
 **Results**:
 | Metric | EIR | Prevalence | Incidence |
@@ -82,7 +82,7 @@ Results will be populated as experiments are completed. Each entry includes:
 ### Attention Mechanism
 **Status**: [Pending]
 
-| Configuration | Pool Type | EIR RMSE | Prevalence RMSE | Incidence RMSE |
+| Configuration | Pool Type | EIR RMSE | Immunity Function RMSE | Incidence RMSE |
 |---|---|---|---|---|
 | With Attention | Attention | — | — | — |
 | Without Attention | Last Timestep | — | — | — |
@@ -161,7 +161,7 @@ EIR Residuals:
   Min: X.XXX
   Max: X.XXX
   
-Prevalence Residuals:
+Immunity Function Residuals:
   Mean: X.XXX
   Std: X.XXX
   

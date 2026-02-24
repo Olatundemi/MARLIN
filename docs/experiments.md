@@ -48,7 +48,7 @@ Config:
     - num_freqs: 8
     - alpha_init: 1.0
     - beta_init: 0.5
-  - Applied to: EIR and prevalence encoders
+  - Applied to: EIR and immunity function encoders
   - Learning rate: 1e-3
   - Epochs: 100
 ```
