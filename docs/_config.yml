@@ -1,7 +1,7 @@
 title: MARLIN - Model Development
-description: Multi-scale temporal encoding with attention for epidemiological prediction
+description: Multi-scale temporal encoding with attention for epidemiological reconstruction
 theme: jekyll-theme-minimal
-logo: https://via.placeholder.com/200?text=MARLIN
+logo: https://github.com/Olatundemi/MARLIN/blob/main/assets/marlin.png?raw=true
 show_downloads: false
 
 # Navigation

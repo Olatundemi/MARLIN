@@ -44,7 +44,7 @@ Start with the [Home Page](index.html) for high-level project understanding.
 Read [Architecture](architecture.html) to understand what makes MARLIN unique:
 - Multi-scale convolution branches (ultra-low, low, high dilation)
 - Temporal encoding with LSTM and attention
-- Multi-task learning for EIR, prevalence, and incidence
+- Multi-task learning for EIR, immunity function (phi), and incidence
 
 ### 3. Learn the Process
 Check [Methodology](methodology.md) for how to:
