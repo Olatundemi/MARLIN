@@ -1,0 +1,29 @@
+title: MARLIN - Model Development
+description: Multi-scale temporal encoding with attention for epidemiological prediction
+theme: jekyll-theme-minimal
+logo: https://via.placeholder.com/200?text=MARLIN
+show_downloads: false
+
+# Navigation
+nav:
+  - name: Home
+    url: /
+  - name: Architecture
+    url: /architecture
+  - name: Methodology
+    url: /methodology
+  - name: Experiments
+    url: /experiments
+  - name: Results
+    url: /results
+
+# Build settings
+markdown: kramdown
+gems:
+  - jekyll-sitemap
+  - jekyll-feed
+
+# Exclude files
+exclude:
+  - readme.md
+  - LICENSE
