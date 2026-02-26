@@ -10,7 +10,7 @@ title: Architecture
 ```
 Input Data → MSConv Branches → Projection → Positional Encoding → LSTM → Attention → Output Heads
 ```
-![Multihead_Model](https://raw.githubusercontent.com/Olatundemi/MARLIN/main/assets/Multihead_Model.png)
+<img src="https://raw.githubusercontent.com/Olatundemi/MARLIN/main/assets/Multihead_Model.png" alt="Multihead Model" style="max-width: 800px; width: 100%; height: auto; margin: 0rem 0;">
 
 ## Core Components
 

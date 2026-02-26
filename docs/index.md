@@ -16,7 +16,8 @@ MARLIN is a deep learning based surrogate designed to emulate certain unlerlying
 from **observed malaria prevalence** timeseries.
 
 ## Why this research matters
-![Illustrative example](https://raw.githubusercontent.com/Olatundemi/MARLIN/main/assets/illustrative_example.png)
+<img src="https://raw.githubusercontent.com/Olatundemi/MARLIN/main/assets/illustrative_example.png" alt="Illustrative example" style="max-width: 800px; width: 100%; height: auto; margin: 0rem 0;">
+
 Malaria transmission is not directly observable. What we measure such as infection prevalence or clinical cases is a delayed and distorted reflection of the true underlying dynamics, including mosquito density, transmission intensity (EIR), immunity function etc. As illustrated above, these signals are temporally misaligned: peaks in rainfall drive mosquito populations, which in turn drive transmission, but observed prevalence and incidence respond later and more smoothly. Moreso, Identical prevalence values (purple dots) can therefore correspond to very different underlying incidence (red dots).
 This mismatch makes epidemiological inference fundamentally challenging. By the time changes appear in routine data, the underlying transmission dynamics may have already shifted.
 This research aims to bridge that gap by learning the hidden relationships between observable data and unobserved transmission processes, enabling faster and more accurate inference of malaria dynamics from routine surveillance.
