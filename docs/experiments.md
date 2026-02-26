@@ -1,3 +1,8 @@
+---
+layout: default
+title: Experiments
+---
+
 # Experiments
 
 ## Experiment Configuration

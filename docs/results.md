@@ -1,3 +1,8 @@
+---
+layout: default
+title: Results
+---
+
 # Results
 
 This page documents experimental results, performance metrics, and key findings from the MARLIN model development pipeline.

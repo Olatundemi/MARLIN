@@ -1,3 +1,8 @@
+---
+layout: default
+title: Architecture
+---
+
 # Architecture: MARLIN Model Design
 
 ## System Overview
@@ -5,6 +10,7 @@
 ```
 Input Data → MSConv Branches → Projection → Positional Encoding → LSTM → Attention → Output Heads
 ```
+![Multihead_Model](https://raw.githubusercontent.com/Olatundemi/MARLIN/main/assets/Multihead_Model.png)
 
 ## Core Components
 

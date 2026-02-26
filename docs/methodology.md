@@ -1,3 +1,8 @@
+---
+layout: default
+title: Methodology
+---
+
 # Methodology: Model Development Pipeline
 
 ## Development Workflow
